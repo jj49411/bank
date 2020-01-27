@@ -14,9 +14,10 @@ describe('Bank', function() {
   it('can add add on value in the account when deposit money', function() {
     bank.deposit(40);
     expect(bank.deposit(50)).toBe(90)
-  })
+  });
 
-  it('can record the time when depositing money', function() {
-    expect(bank.deposit(100)).to
-  })
+  it('can withdraw money in an account', function() {
+    bank.deposit(200);    
+    expect(bank.withdraw(100)).toBe(100)
+  });
 });
