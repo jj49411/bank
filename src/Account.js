@@ -11,4 +11,9 @@ class Account {
     return this.balance += transaction.add(amount);
   }
 
+  withdraw(amount) {
+    var transaction = new Transaction;
+    return this.balance += transaction.remove(amount);
+  }
+
 }
