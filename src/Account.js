@@ -8,12 +8,12 @@ class Account {
  
   deposit(amount) {
     var transaction = new Transaction;
-    return this.balance += transaction.add(amount);
+    this.balance += transaction.add(amount);
   }
 
   withdraw(amount) {
     var transaction = new Transaction;
-    return this.balance += transaction.remove(amount);
+    this.balance += transaction.remove(amount);
   }
 
 }
