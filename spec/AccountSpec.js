@@ -8,6 +8,7 @@ describe('Account', function() {
     account = new Account;
     today = new Date(2020,1,14);
     jasmine.clock().install();
+    jasmine.clock().mockDate(today);    
   });
 
   afterEach(function() {
@@ -26,8 +27,7 @@ describe('Account', function() {
       expect(account.balance).toBe(500);
     })
 
-    it('should add a transaction when deposit money', function() {
-      jasmine.clock().mockDate(today);    
+    it('should add a transaction when deposit money', function() {  
       account.deposit(500);
       expect(account.transactions).toContain(['14/02/2020', 500, 500])
     });
@@ -39,6 +39,12 @@ describe('Account', function() {
       account.deposit(1000);
       account.withdraw(400);
       expect(account.balance).toBe(600);
+    });
+  
+    it('should add a transaction when withdraw money', function() {
+      account.deposit(1000);
+      account.withdraw(200);
+      expect(account.transactions).toContain(['14/02/2020', 200, 800])
     });
   });
 });
