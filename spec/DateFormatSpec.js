@@ -1,6 +1,5 @@
 'use strict';
 
-
 describe('DateFormat', function() {
   var today;
 
